@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import "./HomeMainbar.css";
 import QuestionList from "./QuestionList";
 
-const HomeMainbar = () => {
+const HomeMainbar = ({theme}) => {
   const location = useLocation();
   const user = 1;
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const HomeMainbar = () => {
   };
 
   return (
-    <div className="main-bar">
+    <div className={`main-bar ${theme}`} >
       <div className="main-bar-header">
         {location.pathname === "/" ? (
           <h1>Top Questions</h1>
@@ -38,7 +38,7 @@ const HomeMainbar = () => {
         ) : (
           <>
             <p>{questionsList.data.length} questions</p>
-            <QuestionList questionsList={questionsList.data} />
+            <QuestionList questionsList={questionsList.data} theme={theme} />
           </>
         )}
       </div>

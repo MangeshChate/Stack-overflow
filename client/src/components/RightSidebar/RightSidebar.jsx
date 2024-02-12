@@ -3,9 +3,9 @@ import "./RightSidebar.css";
 import Widget from "./Widget";
 import WidgetTags from "./WidgetTags";
 
-const RightSidebar = () => {
+const RightSidebar = ({theme}) => {
   return (
-    <aside className="right-sidebar">
+    <aside className={`${theme} right-sidebar`}>
       <Widget />
       <WidgetTags />
     </aside>

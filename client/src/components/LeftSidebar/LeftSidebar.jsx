@@ -3,7 +3,7 @@ import "./LeftSidebar.css";
 import { NavLink } from "react-router-dom";
 import Globe from "../../assets/Globe.svg";
 
-const LeftSidebar = ({ slideIn, handleSlideIn }) => {
+const LeftSidebar = ({ slideIn, handleSlideIn ,theme }) => {
   const slideInStyle = {
     transform: "translateX(0%)",
   };
@@ -14,7 +14,7 @@ const LeftSidebar = ({ slideIn, handleSlideIn }) => {
 
   return (
     <div
-      className="left-sidebar"
+      className={`left-sidebar ${theme}`}
       style={slideIn ? slideInStyle : slideOutStyle}
     >
       <nav className="side-nav">

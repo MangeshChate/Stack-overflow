@@ -100,6 +100,24 @@
   background-color: #d3e4eb;
 }
 
+.theme{
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+  
+  font-size: larger;
+}
+
+.dark{
+  background-color: #252525;
+  color: lightcoral;
+  
+}
+
+.light{
+  background-color: aliceblue;
+}
+
 @media screen and (max-width: 1120px) {
   .navbar .navbar-1 form {
     display: none;

@@ -10,7 +10,7 @@ import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";
 import bars from "../../assets/bars-solid.svg";
 
-const Navbar = ({ handleSlideIn }) => {
+const Navbar = ({ handleSlideIn ,theme }) => {
   const dispatch = useDispatch();
   var User = useSelector((state) => state.currentUserReducer);
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ const Navbar = ({ handleSlideIn }) => {
   }, [User?.token, dispatch]);
 
   return (
-    <nav className="main-nav">
+    <nav className={`main-nav ${theme} `}>
       <div className="navbar">
         <button className="slide-in-icon" onClick={() => handleSlideIn()}>
           <img src={bars} alt="bars" width="15" />
@@ -56,7 +56,7 @@ const Navbar = ({ handleSlideIn }) => {
             <img src={search} alt="search" width="18" className="search-icon" />
           </form>
         </div>
-        <div className="navbar-2">
+        <div className="navbar-2" style={{display:"flex" , gap:"50px"}}>
           {User === null ? (
             <Link to="/Auth" className="nav-item nav-links">
               Log in
@@ -80,8 +80,10 @@ const Navbar = ({ handleSlideIn }) => {
               <button className="nav-item nav-links" onClick={handleLogout}>
                 Log out
               </button>
+
             </>
           )}
+        <button className="theme">Auto {theme} Mode </button>
         </div>
       </div>
     </nav>

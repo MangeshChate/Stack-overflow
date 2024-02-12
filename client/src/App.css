@@ -20,3 +20,14 @@
     width: 100%;
   }
 }
+
+
+.dark{
+  background-color: #252525;
+  color: lightcoral;
+  
+}
+
+.light{
+  background-color: aliceblue;
+}
